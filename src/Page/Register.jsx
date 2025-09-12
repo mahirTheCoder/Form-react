@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { RiUserLine } from "react-icons/ri";
 import { IoMailOpenOutline } from "react-icons/io5";
 import { BiPhoneCall } from "react-icons/bi";
+import { IoEyeOutline } from "react-icons/io5";
+import { Link } from 'react-router';
+import { FcGoogle } from "react-icons/fc";
+import { FaFacebook } from "react-icons/fa6";
+import { IoEyeOffOutline } from "react-icons/io5";
 
 const Register = () => {
+const  [ showItem , setShowItem ] = useState (false)
+
+
   return (
     <>
 <section id='form' className=' h-screen flex justify-center items-center bg-[#E8EDF2] dark:bg-[#313442] '>
@@ -51,6 +59,29 @@ const Register = () => {
     </div>
   </div>
 </div>
+
+
+{/* ------------Password numbers part---------- */}
+<div className="mail">
+  <h2 className='text-sm font-normal font-popins text-primery dark:text-[#F1F1F1] pb-2 mt-5'>Password</h2>
+  <div className="both flex justify-between">
+    <div className="name1 w-full px-2 h-12 border border-[#E8EDF2] dark:border-[#313442] rounded-[8px] flex justify-center items-center">
+      <input  type="number" placeholder='Password' className='text-sm w-full font-popins text-[#C6CBD9] dark:text-[#2C2C35] border-none outline-none '/>
+      {
+        showItem?
+          <IoEyeOffOutline onClick={()=> setShowItem(!showItem)} className='text-base text[#9A9AAF] dark:text-[#64646F]'/>
+        :
+        <IoEyeOutline  onClick={()=> setShowItem(!showItem)} className='text-base text[#9A9AAF] dark:text-[#64646F]'/>
+
+
+      }
+    </div>
+  </div>
+</div>
+
+
+
+
 </form>
 </section>
     </>
