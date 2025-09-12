@@ -97,6 +97,12 @@ const  [ showItem , setShowItem ] = useState (false)
 <Link className='w-full h-13 bg-[#7364DB] rounded-md text-white lg:text-base text:sm font-semibold font-popins inline-block  py-3.5 text-center mt-5 mb-5' >Sign up</Link>
 
 
+{/* -------------cheakbox part------------- */}
+<div className="cheak flex gap-2 mb-5.5">
+  <input type="checkbox" className='text-xl text-[#7364DB]  ' />
+  <p className='text-sm font-normal font-popins text-[#8083A3]  '>I agree with terms & conditions</p>
+</div>
+
 
 
 </form>
