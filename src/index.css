@@ -2,3 +2,8 @@
 @utility container {
   margin-inline: auto;
 }
+
+@theme{
+  --font-popins:"Poppins", sans-serif;
+  --color-primery: #07070C;
+}
