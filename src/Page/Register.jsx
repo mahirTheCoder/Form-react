@@ -103,6 +103,21 @@ const  [ showItem , setShowItem ] = useState (false)
   <p className='text-sm font-normal font-popins text-[#8083A3]  '>I agree with terms & conditions</p>
 </div>
 
+{/* ---------social media logo--------- */}
+<div className="socialMedia flex justify-between mb-5.5">
+  <Link className="google w-[170px] h-[50px] border border-[#E8EDF2] dark:border-[#313442] rounded-[8px] flex  justify-center items-center gap-2 ">
+  <a className='text-xl' href="#"><FcGoogle />
+</a>
+  <p className='text-xs font-normal font-popins text-primery  dark:text-[#F1F1F1]'>Google account</p>
+  </Link>
+
+  <Link className="google w-[170px] h-[50px] border border-[#E8EDF2] dark:border-[#313442] rounded-[8px] flex  justify-center items-center gap-2 ">
+  <a className='text-xl text-blue-800' href="#"><FaFacebook />
+</a>
+  <p className='text-xs font-normal font-popins text-primery  dark:text-[#F1F1F1]'>Facebook account</p>
+  </Link>
+</div>
+
 
 
 </form>
