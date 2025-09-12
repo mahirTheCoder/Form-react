@@ -93,6 +93,12 @@ const  [ showItem , setShowItem ] = useState (false)
 
 
 
+{/* -------------sign up button--------- */}
+<Link className='w-full h-13 bg-[#7364DB] rounded-md text-white lg:text-base text:sm font-semibold font-popins inline-block  py-3.5 text-center mt-5 mb-5' >Sign up</Link>
+
+
+
+
 </form>
 </section>
     </>
