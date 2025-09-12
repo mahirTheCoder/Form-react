@@ -119,6 +119,11 @@ const  [ showItem , setShowItem ] = useState (false)
 </div>
 
 
+{/* --------------signin part------------- */}
+<div className="signin flex justify-center gap-1">
+  <p className='text-sm font-normal font-popins text-primery'>Already have an account?</p>
+  <a className='text-sm font-normal font-popins text-[#7364DB]' href="#">Sign in</a>
+</div>
 
 </form>
 </section>
