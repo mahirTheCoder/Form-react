@@ -11,15 +11,18 @@ import { IoEyeOffOutline } from "react-icons/io5";
 const Register = () => {
   const [showItem, setShowItem] = useState(false);
   const [name , setname ] = useState ('')
+  const [nameerror , setNameError] = useState ('border-[#E8EDF2]')
 
   const HandleSubmit = (alu) =>{
     alu.preventDefault()
 
-    if(!name) return alert('input is not defiend ')
-      console.log('successful')
+    if(!name) return setNameError('border-red-500')
+      setNameError('')
    
   }
 
+
+  console.log(nameerror)
   return (
     <section id='form' className='h-screen flex justify-center items-center bg-[#E8EDF2] dark:bg-[#313442]'>
 
@@ -31,9 +34,10 @@ const Register = () => {
         {/* ------------name part---------- */}
         <div className="name">
           <h2 className='text-sm font-normal font-popins text-primery dark:text-[#F1F1F1] pb-2'>Your Name</h2>
+        
           <div className="both flex justify-between">
-            <div className="name1 w-[170px] px-2 h-12 border border-[#E8EDF2] dark:border-[#313442] rounded-[8px] flex justify-center items-center">
-              <input onChange={(e)=>setname(e.target.value)} type="text" placeholder='First Name' className='text-sm w-full font-popins text-[#C6CBD9] dark:text-[#2C2C35] border-none outline-none'/>
+            <div className={`name1 w-[170px] px-2 h-12 border ${nameerror} dark:border-[#313442] rounded-[8px] flex justify-center items-center `}>
+              <input onChange={(e)=>{setname(e.target.value), setNameError(' border-[#E8EDF2]') }} type="text" placeholder='First Name' className='text-sm w-full font-popins text-[#C6CBD9] dark:text-[#2C2C35] border-none outline-none'/>
               <RiUserLine className='text-base text[#9A9AAF] dark:text-[#64646F]'/>
             </div>
             <div className="name1 w-[170px] px-2 h-12 border border-[#E8EDF2] dark:border-[#313442] rounded-[8px] flex justify-center items-center">
