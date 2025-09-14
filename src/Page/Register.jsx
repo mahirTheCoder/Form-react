@@ -54,7 +54,7 @@ const  [ showItem , setShowItem ] = useState (false)
   <h2 className='text-sm font-normal font-popins text-primery dark:text-[#F1F1F1] pb-2 mt-5'>Phone numbers</h2>
   <div className="both flex justify-between">
     <div className="name1 w-full px-2 h-12 border border-[#E8EDF2] dark:border-[#313442] rounded-[8px] flex justify-center items-center">
-      <input type="number" placeholder='(+01)' className='text-sm w-full font-popins text-[#C6CBD9] dark:text-[#2C2C35] border-none outline-none '/>
+      <input type="number" placeholder='(+01)' className='text-sm w-full font-popins text-[#C6CBD9] dark:text-[#2C2C35] border-none outline-none appearance-none '/>
      <BiPhoneCall  className='text-base text[#9A9AAF] dark:text-[#64646F]'/>
     </div>
   </div>
