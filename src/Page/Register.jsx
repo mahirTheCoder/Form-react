@@ -41,7 +41,6 @@ const numberRegex = /^\+?\d{10,15}$/
   }
 
 
-  console.log(nameerror)
   return (
     <section id='form' className='h-screen flex justify-center items-center bg-[#E8EDF2] dark:bg-[#313442]'>
 
@@ -73,7 +72,7 @@ const numberRegex = /^\+?\d{10,15}$/
           <h2 className='text-sm font-normal font-popins text-primery dark:text-[#F1F1F1] pb-2 mt-5'>E-mail</h2>
           <div className="both flex justify-between">
             <div className={`name1 w-full px-2 h-12 border ${emmailError}  dark:border-[#313442] rounded-[8px] flex justify-center items-center`}>
-              <input onChange={(e)=>{setEmail(''),setEmailError('border-[#E8EDF2]')}} type="email" placeholder='Email' className='text-sm w-full font-popins text-[#C6CBD9] dark:text-[#2C2C35] border-none outline-none'/>
+              <input onChange={(e)=>{setEmail(e.target.value), setEmailError('border-[#E8EDF2]')}} type="email" placeholder='Email' className='text-sm w-full font-popins text-[#C6CBD9] dark:text-[#2C2C35] border-none outline-none'/>
               <IoMailOpenOutline className='text-base text[#9A9AAF] dark:text-[#64646F]'/>
             </div>
           </div>
@@ -84,7 +83,7 @@ const numberRegex = /^\+?\d{10,15}$/
           <h2 className='text-sm font-normal font-popins text-primery dark:text-[#F1F1F1] pb-2 mt-5'>Phone numbers</h2>
           <div className="both flex justify-between">
             <div className={`name1 w-full px-2 h-12 border ${numberError}  dark:border-[#313442] rounded-[8px] flex justify-center items-center`}>
-              <input onChange={(e)=>{setNumber(''), setNumberError('border-[#E8EDF2]') }} type="number" placeholder='(+01)' className='text-sm w-full font-popins text-[#C6CBD9] dark:text-[#2C2C35] border-none outline-none appearance-none'/>
+              <input onChange={(e)=>{setNumber(e.target.value), setNumberError('border-[#E8EDF2]') }} type="number" placeholder='(+01)' className='text-sm w-full font-popins text-[#C6CBD9] dark:text-[#2C2C35] border-none outline-none appearance-none'/>
               <BiPhoneCall className='text-base text[#9A9AAF] dark:text-[#64646F]'/>
             </div>
           </div>
