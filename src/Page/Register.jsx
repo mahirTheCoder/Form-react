@@ -18,13 +18,17 @@ const Register = () => {
   const [latnameError , setlastnameError ] = useState ('border-[#E8EDF2]')
   const [nameerror , setNameError] = useState ('border-[#E8EDF2]')
   // -----------email error and regex --------
-  
+  const [emmail, setEmail ] = useState ('')
+  const [emmailError, setEmailError ] = useState ('border-[#E8EDF2]')
+  const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/
+
 
   const HandleSubmit = (alu) =>{
     alu.preventDefault()
 
     if(!name)  {setNameError('border-red-500')}
       if(!latname) { setlastnameError('border-red-500')}
+      if(!emailRegex.test(emmail)) {setEmailError ('border-red-500')}
       
    
   }
@@ -61,8 +65,8 @@ const Register = () => {
         <div className="mail">
           <h2 className='text-sm font-normal font-popins text-primery dark:text-[#F1F1F1] pb-2 mt-5'>E-mail</h2>
           <div className="both flex justify-between">
-            <div className="name1 w-full px-2 h-12 border border-[#E8EDF2] dark:border-[#313442] rounded-[8px] flex justify-center items-center">
-              <input type="email" placeholder='Email' className='text-sm w-full font-popins text-[#C6CBD9] dark:text-[#2C2C35] border-none outline-none'/>
+            <div className={`name1 w-full px-2 h-12 border ${emmailError}  dark:border-[#313442] rounded-[8px] flex justify-center items-center`}>
+              <input onChange={(e)=>{setEmail(''),setEmailError('border-[#E8EDF2]')}} type="email" placeholder='Email' className='text-sm w-full font-popins text-[#C6CBD9] dark:text-[#2C2C35] border-none outline-none'/>
               <IoMailOpenOutline className='text-base text[#9A9AAF] dark:text-[#64646F]'/>
             </div>
           </div>
