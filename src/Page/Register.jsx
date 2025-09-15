@@ -28,6 +28,11 @@ const [number , setNumber ] = useState ('')
 const [numberError , setNumberError ] = useState ('border-[#E8EDF2]')
 const numberRegex = /^\+?\d{10,15}$/
 
+// -----------password--------------
+const [password , setpasword ] = useState ('')
+const [passwordError , setpaswordError ] = useState ('border-[#E8EDF2]')
+const passRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{4,20}$/;
+
 
   const HandleSubmit = (alu) =>{
     alu.preventDefault()
@@ -36,6 +41,9 @@ const numberRegex = /^\+?\d{10,15}$/
       if(!latname) { setlastnameError('border-red-500')}
       if(!emailRegex.test(emmail)) {setEmailError ('border-red-500')}
       if(!numberRegex.test(number)) {setNumberError ('border-red-500')}
+      if(!passRegex.test(password)) {setpaswordError ('border-red-500')}
+
+
       
    
   }
@@ -67,6 +75,7 @@ const numberRegex = /^\+?\d{10,15}$/
           </div>
         </div>
 
+
         {/* ------------mail part---------- */}
         <div className="mail">
           <h2 className='text-sm font-normal font-popins text-primery dark:text-[#F1F1F1] pb-2 mt-5'>E-mail</h2>
@@ -77,6 +86,8 @@ const numberRegex = /^\+?\d{10,15}$/
             </div>
           </div>
         </div>
+
+
 
         {/* ------------Phone numbers part---------- */}
         <div className="mail">
@@ -89,11 +100,12 @@ const numberRegex = /^\+?\d{10,15}$/
           </div>
         </div>
 
+
         {/* ------------Password part---------- */}
         <div className="mail">
           <h2 className='text-sm font-normal font-popins text-primery dark:text-[#F1F1F1] pb-2 mt-5'>Password</h2>
-          <div className="name1 w-full px-2 h-12 border border-[#E8EDF2] dark:border-[#313442] rounded-[8px] flex justify-center items-center">
-            <input type={showItem ? "text" : "password"} placeholder='Password' className='text-sm w-full font-popins text-[#C6CBD9] dark:text-[#2C2C35] border-none outline-none'/>
+          <div className={`name1 w-full px-2 h-12 border ${passwordError}  dark:border-[#313442] rounded-[8px] flex justify-center items-center`}>
+            <input onChange={(e)=>{setpasword(e.target.value), setpaswordError('border-[#E8EDF2]') }} type={showItem ? "text" : "password"} placeholder='Password' className='text-sm w-full font-popins text-[#C6CBD9] dark:text-[#2C2C35] border-none outline-none'/>
             {showItem ? (
               <IoEyeOffOutline onClick={() => setShowItem(!showItem)} className='cursor-pointer text-base'/>
             ) : (
@@ -101,6 +113,8 @@ const numberRegex = /^\+?\d{10,15}$/
             )}
           </div>
         </div>
+
+
 
         {/* ------------Confirm Password part---------- */}
         <div className="mail">
@@ -115,6 +129,8 @@ const numberRegex = /^\+?\d{10,15}$/
           </div>
         </div>
 
+
+
         {/* -------------sign up button--------- */}
         <button type="submit" className='w-full h-13 bg-[#7364DB] rounded-md text-white lg:text-base text-sm font-semibold font-popins py-3.5 text-center mt-5 mb-5'>
           Sign up
@@ -126,6 +142,7 @@ const numberRegex = /^\+?\d{10,15}$/
           <p className='text-sm font-normal font-popins text-[#8083A3]'>I agree with terms & conditions</p>
         </div>
 
+
         {/* ---------social media logo--------- */}
         <div className="socialMedia flex justify-between mb-5.5">
           <button type="button" className="google w-[170px] h-[50px] border border-[#E8EDF2] dark:border-[#313442] rounded-[8px] flex justify-center items-center gap-2">
@@ -133,11 +150,13 @@ const numberRegex = /^\+?\d{10,15}$/
             <p className='text-xs font-normal font-popins text-primery dark:text-[#F1F1F1]'>Google account</p>
           </button>
 
+
           <button type="button" className="google w-[170px] h-[50px] border border-[#E8EDF2] dark:border-[#313442] rounded-[8px] flex justify-center items-center gap-2">
             <FaFacebook className="text-xl text-blue-800"/>
             <p className='text-xs font-normal font-popins text-primery dark:text-[#F1F1F1]'>Facebook account</p>
           </button>
         </div>
+
 
         {/* --------------signin part------------- */}
         <div className="signin flex justify-center gap-1">
