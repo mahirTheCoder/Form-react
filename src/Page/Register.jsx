@@ -11,13 +11,16 @@ import { IoEyeOffOutline } from "react-icons/io5";
 const Register = () => {
   const [showItem, setShowItem] = useState(false);
   const [name , setname ] = useState ('')
+  const [latname , setlastname ] = useState ('')
+  const [latnameError , setlastnameError ] = useState ('border-[#E8EDF2]')
   const [nameerror , setNameError] = useState ('border-[#E8EDF2]')
 
   const HandleSubmit = (alu) =>{
     alu.preventDefault()
 
-    if(!name) return setNameError('border-red-500')
-      setNameError('')
+    if(!name)  {setNameError('border-red-500')}
+      if(!latname) { setlastnameError('border-red-500')}
+      
    
   }
 
@@ -40,8 +43,8 @@ const Register = () => {
               <input onChange={(e)=>{setname(e.target.value), setNameError(' border-[#E8EDF2]') }} type="text" placeholder='First Name' className='text-sm w-full font-popins text-[#C6CBD9] dark:text-[#2C2C35] border-none outline-none'/>
               <RiUserLine className='text-base text[#9A9AAF] dark:text-[#64646F]'/>
             </div>
-            <div className="name1 w-[170px] px-2 h-12 border border-[#E8EDF2] dark:border-[#313442] rounded-[8px] flex justify-center items-center">
-              <input type="text" placeholder='Last Name' className='text-sm w-full font-popins text-[#C6CBD9] dark:text-[#2C2C35] border-none outline-none'/>
+            <div className={`name1 w-[170px] px-2 h-12 border ${latnameError}  dark:border-[#313442] rounded-[8px] flex justify-center items-center`}>
+              <input onChange={(e)=>{setlastname(e.target.value), setlastnameError('border-[#E8EDF2]')}} type="text" placeholder='Last Name' className='text-sm w-full font-popins text-[#C6CBD9] dark:text-[#2C2C35] border-none outline-none'/>
               <RiUserLine className='text-base text[#9A9AAF] dark:text-[#64646F]'/>
             </div>
           </div>
@@ -124,6 +127,7 @@ const Register = () => {
           <p className='text-sm font-normal font-popins text-primery'>Already have an account?</p>
           <Link to="/login" className='text-sm font-normal font-popins text-[#7364DB]'>Sign in</Link>
         </div>
+     
       </form>
     </section>
   )
