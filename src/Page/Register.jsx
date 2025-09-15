@@ -9,11 +9,16 @@ import { FaFacebook } from "react-icons/fa6";
 import { IoEyeOffOutline } from "react-icons/io5";
 
 const Register = () => {
+  //----------pass show hide ------------ 
   const [showItem, setShowItem] = useState(false);
+
+  // ----------name error ----------
   const [name , setname ] = useState ('')
   const [latname , setlastname ] = useState ('')
   const [latnameError , setlastnameError ] = useState ('border-[#E8EDF2]')
   const [nameerror , setNameError] = useState ('border-[#E8EDF2]')
+  // -----------email error and regex --------
+  
 
   const HandleSubmit = (alu) =>{
     alu.preventDefault()
@@ -33,6 +38,8 @@ const Register = () => {
 
         <h2 className='lg:text-24 text-lg font-bold font-popins pb-1 text-primery text-center dark:text-[#F1F1F1]'>Create an account</h2>
         <p className='text-sm font-normal font-popins text-[#7E7E8F] text-center dark:text-[#8B8B93] pb-7.5'>You are welcome!</p>
+
+
 
         {/* ------------name part---------- */}
         <div className="name">
