@@ -17,10 +17,16 @@ const Register = () => {
   const [latname , setlastname ] = useState ('')
   const [latnameError , setlastnameError ] = useState ('border-[#E8EDF2]')
   const [nameerror , setNameError] = useState ('border-[#E8EDF2]')
+
   // -----------email error and regex --------
   const [emmail, setEmail ] = useState ('')
   const [emmailError, setEmailError ] = useState ('border-[#E8EDF2]')
   const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/
+
+  // ----------number error and regex use---------
+const [number , setNumber ] = useState ('')
+const [numberError , setNumberError ] = useState ('border-[#E8EDF2]')
+const numberRegex = /^\+?\d{10,15}$/
 
 
   const HandleSubmit = (alu) =>{
@@ -29,6 +35,7 @@ const Register = () => {
     if(!name)  {setNameError('border-red-500')}
       if(!latname) { setlastnameError('border-red-500')}
       if(!emailRegex.test(emmail)) {setEmailError ('border-red-500')}
+      if(!numberRegex.test(number)) {setNumberError ('border-red-500')}
       
    
   }
@@ -76,8 +83,8 @@ const Register = () => {
         <div className="mail">
           <h2 className='text-sm font-normal font-popins text-primery dark:text-[#F1F1F1] pb-2 mt-5'>Phone numbers</h2>
           <div className="both flex justify-between">
-            <div className="name1 w-full px-2 h-12 border border-[#E8EDF2] dark:border-[#313442] rounded-[8px] flex justify-center items-center">
-              <input type="number" placeholder='(+01)' className='text-sm w-full font-popins text-[#C6CBD9] dark:text-[#2C2C35] border-none outline-none appearance-none'/>
+            <div className={`name1 w-full px-2 h-12 border ${numberError}  dark:border-[#313442] rounded-[8px] flex justify-center items-center`}>
+              <input onChange={(e)=>{setNumber(''), setNumberError('border-[#E8EDF2]') }} type="number" placeholder='(+01)' className='text-sm w-full font-popins text-[#C6CBD9] dark:text-[#2C2C35] border-none outline-none appearance-none'/>
               <BiPhoneCall className='text-base text[#9A9AAF] dark:text-[#64646F]'/>
             </div>
           </div>
